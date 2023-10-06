@@ -1,0 +1,13 @@
+[package]
+name = "wasm-dev-book-hello-wasm"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+
+# Rust からコンパイルしたバイナリにはデフォルトで他の Rust プログラムからの利用する際に使われるメタデータなどが含まれています[2]. 
+# これらのメタデータは WebAssembly では不要なので crate-type に "cdylib" を指定し, 削ぎ落とす
+[lib]
+crate-type = ["cdylib"]
